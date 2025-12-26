@@ -1,0 +1,337 @@
+/* --- Global & Typography --- */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; 
+    background-color: #fcfcfc; 
+    color: #2d3436;
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+.container { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh; 
+}
+
+/* --- Header --- */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.header-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.header-right img {
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.header-right img:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+
+.app-name {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1e272e;
+}
+
+/* --- Layout Panels --- */
+.main-content { 
+    display: flex; 
+    flex: 1; 
+    overflow: hidden; 
+}
+
+.left-panel { 
+    width: 35%; 
+    padding: 40px; 
+    background: #fff; 
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel { 
+    width: 65%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    background: #fdfdfd; 
+}
+
+.divider { 
+    width: 1px; 
+    background: linear-gradient(to bottom, transparent, #ff7675, transparent); 
+    height: 70%; 
+    align-self: center; 
+    opacity: 0.3; 
+}
+
+/* --- Task Section & Scrollbar --- */
+#task-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+#task-input:focus { 
+    border-color: #ff7675; 
+    box-shadow: 0 4px 12px rgba(255, 118, 117, 0.1); 
+}
+
+.section-title { 
+    margin: 30px 0 20px; 
+    font-size: 16px; 
+    color: #b2bec3; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+/* Container untuk List Tugas agar bisa di-scroll */
+.task-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar Styling */
+.task-container::-webkit-scrollbar {
+    width: 6px;
+}
+.task-container::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+.task-container::-webkit-scrollbar-thumb {
+    background: #dfe6e9;
+    border-radius: 10px;
+}
+.task-container::-webkit-scrollbar-thumb:hover {
+    background: #b2bec3;
+}
+
+.task-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    border-color: #ff767555;
+}
+
+/* --- Timer Display --- */
+.focus-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    color: #636e72; 
+    margin-bottom: 10px; 
+}
+
+.timer-display { 
+    font-size: 160px; 
+    font-weight: 800; 
+    margin: -10px 0; 
+    color: #2d3436;
+    font-variant-numeric: tabular-nums; 
+}
+
+/* --- Timer Settings --- */
+.timer-settings { 
+    display: flex; 
+    gap: 20px; 
+    align-items: flex-end; 
+    margin-bottom: 40px; 
+}
+
+.setting-item { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.setting-item label { 
+    font-size: 12px; 
+    font-weight: 700; 
+    color: #b2bec3; 
+    text-transform: uppercase; 
+}
+
+.setting-item input {
+    width: 70px;
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    outline: none;
+}
+
+.setting-item input:focus {
+    border-color: #2d3436;
+}
+
+#set-timer-btn {
+    padding: 10px 20px;
+    background: #2d3436;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#set-timer-btn:hover {
+    background: #000;
+}
+
+/* --- Controls --- */
+.controls { 
+    display: flex; 
+    gap: 25px; 
+    align-items: center; 
+}
+
+.control-btn {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    border: none;
+    background: #fff; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.control-btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+}
+
+.control-btn.main { 
+    width: 80px; 
+    height: 80px; 
+    background: #fff; 
+    border: 2px solid #f0f0f0; 
+}
+
+/* --- Status & Logs --- */
+#alarm-status { 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    animation: blink 1s infinite; 
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.productivity-log { 
+    margin-top: 50px; 
+    padding: 20px; 
+    background: #fff; 
+    border-radius: 16px; 
+    width: 280px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.skip-break { 
+    margin-top: 30px; 
+    font-size: 13px; 
+    font-weight: 700; 
+    color: #b2bec3; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.skip-break:hover { 
+    color: #ff7675; 
+}
+
+.delete-task-btn {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.delete-task-btn:hover {
+    opacity: 1;
+    color: #ff4757 !important;
+}
+
+.task-checkbox {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: #ff7675;
+}
+
+/* Modal Background */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+    backdrop-filter: blur(4px);
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.setting-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+#alarm-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
